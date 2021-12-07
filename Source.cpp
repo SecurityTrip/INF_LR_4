@@ -27,40 +27,6 @@ bool frepeat() {
     }
 }
 
-string check_str()
-{
-    
-    string in_value;
-    cout << "Input a string>";
-    cin >> in_value;
-    while ((cin.fail()) || (cin.peek() != '\n'))
-    {
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cout << "Wrong type of input data, try again: "; cin >> in_value;
-        cout << endl;
-    }
-    return in_value;
-    
-}
-
-string filename_check()
-{
-
-    string in_value;
-    cout << "Input a filename>";
-    cin >> in_value;
-    while ((cin.fail()) || (cin.peek() != '\n'))
-    {
-        cin.clear();
-        cin.ignore(10000, '\n');
-        cout << "Wrong type of input data, try again: "; cin >> in_value;
-        cout << endl;
-    }
-    return in_value;
-
-}
-
 int main()
 {
     cout << "Text search" << endl;
@@ -68,11 +34,17 @@ int main()
     while (repeat)
     {
         ifstream infile;
-        string to_find = check_str();
-        string filename = filename_check();
+        string to_find;
+        cout << "Input a string>";
+        getline(cin, to_find);
+        string filename;
+        cout << "Input a filename>";
+        getline(cin, filename);
         size_t pos;
         infile.open(filename);
+        //cout << endl << filename;
         bool check = false;
+        //cout << to_find << endl << filename << endl;
         if (!infile.is_open()) cout << "Can`t open the file." << endl;
         else
         {
@@ -93,6 +65,7 @@ int main()
         }
         infile.close();
         repeat = frepeat();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
     return 0;
 }

@@ -20,8 +20,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input1.txt">
+    <Text Include="in.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="The Adventures of Sherlock Holmes.txt" />
+    <Text Include="The Jungle Book.txt" />
+    <Text Include="Jane_Eyre.txt" />
   </ItemGroup>
 </Project>
