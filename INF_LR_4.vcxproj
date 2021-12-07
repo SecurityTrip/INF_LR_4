@@ -142,7 +142,6 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt" />
     <Text Include="Jane_Eyre.txt" />
     <Text Include="The Adventures of Sherlock Holmes.txt" />
     <Text Include="The Jungle Book.txt" />
